@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewBag.Title = "Mining Operator - " + User.Identity.Name + " Balance";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_main.cshtml";
+}
+
+
+<div class="center_left">
+    <ul class="nav nav-pills">
+        <li role="presentation">@Html.ActionLink("Profile", "Main", "Profile")</li>
+        <li class="active">@Html.ActionLink("Balance", "Balance", "Profile")</li>
+        @if (ViewBag.check == true)
+        {
+            <li role="presentation">@Html.ActionLink("Payout", "Payout", "Profile")</li>
+        }
+    </ul>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-success">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-dollar"></i> Balance</h3>
+            </div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs" style="width: 40px;"></th>
+                            <th title=">Balance BTC">Balance BTC</th>
+                            <th class="hidden-xs" title="Balance dollars">Balance dollars</th>
+                            <th class="hidden-xs" title="Mining Earnings 1TH*24H">Mining Earnings 1TH*24H</th>
+                            <th class="hidden-xs" title="Estimate 24 hours">Estimate 24H</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="hidden-xs"> </td>
+                            <td><i class="fa fa-btc"></i> <a href="javascript:void(0)" onclick="document.getElementById('inp').value=@ViewBag.balance">@ViewBag.balance BTC</a></td>
+                            <td class="hidden-xs"><i class="fa fa-dollar"></i> @ViewBag.balanced</td>
+                            <td class="hidden-xs"><i class="fa fa-bitcoin"></i> @ViewBag.fminear BTC</td>
+                            <td class="hidden-xs"><i class="fa fa-bitcoin"></i> @ViewBag.futureBalance BTC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-danger">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-credit-card"></i> Payout</h3>
+            </div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs" style="width: 40px;"></th>
+                            <th title="Payouts amount" style="width: 200px;">Payouts amount</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td class="hidden-xs"><i class="fa fa-btc"></i></td>
+                            <td><input type="number" min="0.00100000" max="@ViewBag.balance" step="0.001" class="input-mini" id="inp" /> BTC</td>
+                            <td><input type="submit" value="Confirm" class="btn btn-default" style="padding: 3px 12px;" onclick="SentMail()"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-primary">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-tachometer"></i> Hashrate</h3>
+            </div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs" style="width: 40px;"></th>
+                            <th title="Alltime Hashrate">Alltime</th>
+                            <th title="Daily Hashrate">Daily</th>
+                            <th title="Hourly Hashrate">Hourly</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="hidden-xs"> </td>
+                            <td><i class="fa fa-tachometer"></i> @ViewBag.hash TH/s</td>
+                            <td><i class="fa fa-tachometer"></i> @ViewBag.dayhash TH/s</td>
+                            <td><i class="fa fa-tachometer"></i> @ViewBag.hourhash TH/s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="tab-content">
+            <div class="tab-pane active">
+                <div class="col-sm-12">
+                    <div>
+                        <div>
+                        </div>
+                        <div>
+                            <form class="form-horizontal" method="post" style="margin-bottom:0" autocomplete="off" novalidate="novalidate" action="ProcessRequest">
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Alltime Hashrate:</label>
+                                    <div style="padding-top: 7px;" class="col-sm-6">@ViewBag.hash TH/s</div>
+                                    <label class="control-label col-sm-4">Hourly Hashrate:</label>
+                                    <div style="padding-top: 7px;" class="col-sm-6">@ViewBag.hourhash TH/s</div>
+                                    <label class="control-label col-sm-4">Daily Hashrate:</label>
+                                    <div style="padding-top: 7px;" class="col-sm-6">@ViewBag.dayhash TH/s</div>
+                                    <label class="control-label col-sm-4">Mining Earnings 1TH*24H:</label>
+                                    <div style="padding-top: 7px;" class="col-sm-6">@ViewBag.fminear BTC</div>
+                                    <label class="control-label col-sm-4">Balance btc:</label>
+                                    <div style="padding-top: 7px;" class="col-sm-6"><a href="javascript:void(0)" onclick="document.getElementById('inp').value=@ViewBag.balance">@ViewBag.balance BTC</a></div>
+                                    <label class="control-label col-sm-4">Balance dollars:</label>
+                                    <div style="padding-top: 7px;" class="col-sm-6">$@ViewBag.balanced</div>
+                                    <label class="control-label col-sm-4">Amount payouts:</label>
+                                    <div style="padding-top: 7px;" class="col-sm-6">
+                                        <input type="number" min="0.001" max="@ViewBag.balance" step="0.001" name="amount" class="input-mini" id="inp" /> BTC <input type="submit" value="Confirm" class="btn btn-default">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>*@
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<div class="row">
+    <div class="col-md-12">
+        <input onclick="document.getElementById('chartdivdate').style = ';width: 100%;height: 400px;display:none;'; document.getElementById('chartdiv').style='width: 100%;height: 400px;'" type="submit" class="btn btn-default" value="5 minute" />
+        <input onclick="document.getElementById('chartdiv').style = ';width: 100%;height: 400px;display:none;'; document.getElementById('chartdivdate').style='width: 100%;height: 400px;'" type="submit" class="btn btn-default" value="Day" />
+    </div>
+</div>
+@ViewBag.res
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<div id="chartdiv" style="width: 100%;height: 400px;">@Html.Raw(ViewBag.script)</div>
+<div id="chartdivdate" style="display:none;width: 100%;height: 400px;">@Html.Raw(ViewBag.scriptdate)</div>
+@*<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+
+        @Html.Raw(ViewBag.script)
+
+    </div>
+
+    <div id="containerdate" style="display:none;min-width: 310px; height: 400px; margin: 0 auto">
+
+        @Html.Raw(ViewBag.scriptdate)
+
+    </div>*@
+
+
+@*Popup modal*@
+<div class="modal fade" id="ModalPayout">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h4 id="ModalTitle"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="buttons">
+                    <button class="btn btn-danger active" data-toggle="#Wallet">Wallet</button>
+                    <button class="btn btn-danger" data-toggle="#Card">Credit Card</button>
+                </div>
+                <form id="form" method="post" action="ProcessRequest" class="form-horizontal" style="margin-bottom:0px;" autocomplete="off" novalidate="novalidate">
+                    <fieldset id="SubmitForm">
+                        <div class="form-group" style="position: relative; height: 25px;margin-top: 15px;">
+                            <input disabled="disabled" id="Card" name="card" class="form-control option" type="tel" pattern="\d{4}-\d{4}-\d{4}-\d{4}" maxlength="16" placeholder="Card Number*" />
+                            <input name="wallet" id="Wallet" class="form-control option active" type="text" placeholder="Wallet*" />
+                            <input name="maxvalue" id="Maxvalue" value="@ViewBag.balance" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <input required min="0.00100000" max=@ViewBag.balance step="0.001" name="amount" type="number" id="Amount" class="form-control" placeholder="Amount*" />
+
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" onclick="" value="Sent" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    input.option {
+        backface-visibility: hidden;
+        position: absolute;
+        transform: rotateY(-180deg);
+        transition: 350ms;
+    }
+
+    input.active {
+        transform: rotateY(0deg);
+    }
+</style>
+<script>
+    function SentMail() {
+        $("#form")[0].reset();
+        $("#ModalTitle").html("Add New Payout");
+        var inp = document.getElementById("inp");
+        var amount = document.getElementById("Amount");
+        amount.value = inp.value;
+        $("#ModalPayout").modal();
+    }
+    $('.buttons button').on('click', function () {
+        var $self = $(this);
+        if (!$self.hasClass('active')) {
+            var toggle = $self.data('toggle');
+
+            // Switch active buttons
+            $('.active').removeClass('active');
+            $self.addClass('active');
+            // Switch active forms
+            $('input.form-control.option').attr('disabled', true);
+            $(toggle).addClass('active').attr('disabled', false);
+        }
+    });
+</script>
+
+

@@ -1,0 +1,659 @@
+﻿@{
+    ViewBag.Title = "Minear";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" async="" src="~/Content/v3/style/js/analytics.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53903397-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-53903397-2');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mining Operator - Private Zero Fees PPS++ Bitcoin Pool</title>
+    <meta name="description" content="Private Zero Fees PPS++ Bitcoin Mining Pool">
+    <meta name="keywords" content="">
+    <meta name="author" content="ScalpeI">
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <!-- Magnific-popup -->
+    <link rel="stylesheet" href="~/Content/v3/style/css/magnific-popup.css">
+
+    <!--Slider Css-->
+    <link href="~/Content/v3/style/css/owl_003.css" rel="stylesheet">
+    <link href="~/Content/v3/style/css/owl_002.css" rel="stylesheet">
+    <link href="~/Content/v3/style/css/owl.css" rel="stylesheet">
+
+    <!-- Icon -->
+    <link href="~/Content/v3/style/css/mobiriseicons.css" rel="stylesheet">
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="~/Content/v3/style/css/materialdesignicons.css">
+
+    <!--bootstrap Css-->
+    <link rel="stylesheet" type="text/css" href="~/Content/v3/style/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/v3/style/css/style.css" rel="stylesheet" />
+
+    <style type="text/css" id="#jarallax-clip-0">
+        #jarallax-container-0 {
+            clip: rect(0 1903px 944px 0);
+            clip: rect(0, 1903px, 944px, 0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom_nav_menu sticky stickyadd">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand logo" href="https://mining-operator.org.uk/">
+                <img src="~/Content/v3/style/images/logo-2.png" alt="" class="img-fluid logo-light">
+                <img src="~/Content/v3/style/images/logo-dark.png" alt="" class="img-fluid logo-dark">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link"><i class="fa fa-home"></i> HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link"><i class="fa fa-info"></i> FEATURES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#compare" class="nav-link"><i class="fa fa-bar-chart"></i> COMPARE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#faq" class="nav-link"><i class="fa fa-question"></i> FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#join" class="nav-link"><i class="fa fa-user-plus"></i> JOIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link"><i class="fa fa-paper-plane"></i> CONTACT</a>
+                    </li>
+                </ul>
+                <a class="btn_custom btn btn_small text-capitalize navbar-btn" href="@Url.Action("Login","Account")"><i class="fa fa-sign-in"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- Home Section Start-->
+    <section class="section_all full_height_100vh_home creative jarallax" data-jarallax="{" speed": 0.2}" style="background-image: url(../content/v3/style/images/triangles_background_firestock.jpg);" id="home" ">
+        <div class="bg_overlay_cover_on"></div>
+        <div class="home_table_cell">
+            <div class="home_table_cell_center">
+                <div class="container position-relative up-index">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <h1 class="home_title text-white mx-auto text-capitalize mb-0 pt-4"> The only PPS++ Bitcoin Mining Pool with <i class="text_custom"> Zero Fees </i> and <i class="text_custom">4% bonus</i></h1>
+                                <div class="home_text_details">
+                                    <p class="home_subtitle mt-4 mx-auto mb-0">
+                                        Mining Operator
+                                        is a Scotland based Invite only Bitcoin pool for miners who meet our
+                                        technical requirements. Our mission is to keep mining sustainable and
+                                        decentralised.
+                                    </p>
+                                </div>
+
+                                <div class="home_btn_manage mt-4 pt-3">
+                                    <a href="#features" class="btn btn_custom btn-rounded mr-3">FEATURES</a>
+                                    <a href="#join" class="btn btn_custom btn-rounded mr-3">REQUEST INVITE</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%; position: absolute; top: 0px;" width="1903" height="944"></canvas><div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -100;" id="jarallax-container-0"><div style="background-position: 50% 50%; background-size: 100%; background-repeat: no-repeat; background-image: url(../content/v3/style/images/triangles_background_firestock.jpg); position: absolute; top: 0px; left: 0px; width: 1903px; height: 1427.25px; overflow: hidden; pointer-events: none; margin-left: 0px; margin-top: -241.625px; visibility: visible; transform: translateY(163.2px) translateZ(0px);"></div></div>
+    </section>
+    <!-- Home Section End-->
+    <!-- Start Features -->
+    <section class="section_all bg-light" id="features">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="section_heading  text-center">
+                        <h3 class="all_section_heading">Features</h3>
+                        <p class="text-muted pt-2 all_section_heading_details text-center mx-auto">We are a technology first pool and have built a custom technology stack to generate sustainable returns for miners.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="services_box bg-white text-center p-4 mt-3">
+                        <div class="service_icon">
+                            <h1 class="text-muted">PPS++</h1>
+                        </div>
+                        <div class="service_content mt-4">
+                            <h5 class="font-weight-bold">No Variance</h5>
+                            <p class="mt-3 text-muted mb-0">Pay Per Share with transaction fees and Bonus. Predictable payments.</p>
+                            <a href="#" class="services_read_more mt-3 d-block">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services_box bg-white text-center p-4 mt-3">
+                        <div class="service_icon">
+                            <h1 class="text-muted">Bonus</h1>
+                        </div>
+                        <div class="service_content mt-4">
+                            <h5 class="font-weight-bold">+4% Hashrate</h5>
+                            <p class="mt-3 text-muted mb-0">Low latency miners above 1TH/s and below 100TH/s each will receive 4%.</p>
+                            <a href="#" class="services_read_more mt-3 d-block">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services_box bg-white text-center p-4 mt-3">
+                        <div class="service_icon">
+                            <h1 class="text-muted">Fast</h1>
+                        </div>
+                        <div class="service_content mt-4">
+                            <h5 class="font-weight-bold">Multi Region Servers</h5>
+                            <p class="mt-3 text-muted mb-0">Automatic latency routed stratum servers in multiple geographical locations.</p>
+                            <a href="#" class="services_read_more mt-3 d-block">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-4">
+                    <div class="services_box bg-white text-center p-4 mt-3">
+                        <div class="service_icon">
+                            <h1 class="text-muted">Secure</h1>
+                        </div>
+                        <div class="service_content mt-4">
+                            <h5 class="font-weight-bold">Fixed Payout Address</h5>
+                            <p class="mt-3 text-muted mb-0">Mine using your payout BTC address that becomes your account ID. Simple, Secure.</p>
+                            <a href="#" class="services_read_more mt-3 d-block">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services_box bg-white text-center p-4 mt-3">
+                        <div class="service_icon">
+                            <h1 class="text-muted">Efficient</h1>
+                        </div>
+                        <div class="service_content mt-4">
+                            <h5 class="font-weight-bold">Multiple Bitcoin Nodes</h5>
+                            <p class="mt-3 text-muted mb-0">Multiple highly connected Bitcoin nodes to limit orphaned blocks.</p>
+                            <a href="#" class="services_read_more mt-3 d-block">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services_box bg-white text-center p-4 mt-3">
+                        <div class="service_icon">
+                            <h1 class="text-muted">Payout</h1>
+                        </div>
+                        <div class="service_content mt-4">
+                            <h5 class="font-weight-bold">Daily Payouts</h5>
+                            <p class="mt-3 text-muted mb-0">Daily processing of payments once 0.01BTC has been accumulated. </p>
+                            <a href="#" class="services_read_more mt-3 d-block">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Features -->
+    <!-- Compare Start -->
+    <section class="section_all bg-light" id="compare">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_heading text-center">
+                        <h3 class="all_section_heading">Compare Payout Models</h3>
+                        <p class="text-muted pt-2 all_section_heading_details text-center mx-auto">Some general difference between Mining Operator and other Mining Pool Models.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="mt-3 pricing_plan_box bg-white">
+                        <div class="pricing_header text-center">
+                            <div class="price-name">
+                                <h4 class="font-weight-bold text-uppercase mb-0">PPLNS</h4>
+                                <div class="pricing_devider mx-auto mt-2"></div>
+                            </div>
+                            <div class="price_tag_heading mt-4">
+                                <h3 class="font-weight-bold mb-0">98% - 100%</h3>
+                            </div>
+                        </div>
+                        <div class="list_price_features mb-0">
+                            <p><i class="mdi mdi-check icon_success_color"></i>Depends on Pool Luck</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Miner Takes on Risk</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Variable Payout Times</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Low Fees</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Includes Tx Fees</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Higher Ramp Up Time</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Maximum 100%</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Min Payout 0.001 BTC</p>
+                        </div>
+                        <div class="text-center">
+                            <a href="https://en.bitcoin.it/wiki/Comparison_of_mining_pools" target="_blank" class="btn btn_custom">PPLNS Pools</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="mt-3 pricing_plan_box active">
+                        <div class="lable">
+                            <h6 class="best mb-0 text-uppercase">Mining Operator</h6>
+                        </div>
+                        <div class="pricing_header text-center">
+                            <div class="price-name">
+                                <h4 class="font-weight-bold text-white text-uppercase mb-0">PPS++</h4>
+                                <div class="pricing_devider bg-white mx-auto mt-2"></div>
+                            </div>
+                            <div class="price_tag_heading mt-4">
+                                <h3 class="font-weight-bold text-white mb-0">100% - 104%</h3>
+                            </div>
+                        </div>
+                        <div class="list_price_features text-white mb-0">
+                            <p><i class="mdi mdi-check icon_success_color"></i>No Variance</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Pool Takes on Risk</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Fixed Payout Timing</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>No Fees</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Includes Tx Fees</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Low Ramp Up Time</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>High Chance of 104%</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Min Payout 0.01 BTC</p>
+                        </div>
+                        <div class="text-center">
+                            <a href="#join" class="btn btn_outline_custom">Request Invite</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="mt-3 pricing_plan_box bg-white">
+                        <div class="pricing_header text-center">
+                            <div class="price-name">
+                                <h4 class="font-weight-bold text-uppercase mb-0">PPS (FPPS/PPS+)</h4>
+                                <div class="pricing_devider mx-auto mt-2"></div>
+                            </div>
+                            <div class="price_tag_heading mt-4">
+                                <h3 class="font-weight-bold mb-0">96% - 98%</h3>
+                            </div>
+                        </div>
+                        <div class="list_price_features mb-0">
+                            <p><i class="mdi mdi-check icon_success_color"></i>No Variance</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Pool Takes on Risk</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Fixed Payout Timing</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>High Fees</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>May Include Tx Fees</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Low Ramp Up Time</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Maximum 100%</p>
+                            <p><i class="mdi mdi-check icon_success_color"></i>Min Payout 0.001 BTC</p>
+                        </div>
+                        <div class="text-center">
+                            <a href="https://en.bitcoin.it/wiki/Comparison_of_mining_pools" target="_blank" class="btn btn_custom">PPS Pools</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Compare End  -->
+    <!-- FAQ Start -->
+    <section class="section_all" id="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_heading text-center">
+                        <h3 class="all_section_heading">Frequently Asked Questions</h3>
+                        <p class="text-muted pt-2 all_section_heading_details text-center mx-auto">
+                            You
+                            may have a ton of questions feel free to contact us or have a read
+                            through this FAQ. Invited miners will have access to more details in the
+                            private FAQ section and access to Discord.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">What and Where is Mining Operator?</h6>
+                        <p class="mb-0 text-muted">
+                            We are a
+                            Singapore based Bitcoin trading and mining pool with a mission to
+                            decentralise mining. We will not accept more than 10% of the total
+                            network hash.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">How do you manage to pay a bonus and take 0% fees?</h6>
+                        <p class="mb-0 text-muted">
+                            Through a mixture
+                            of latency and risk arbtrage, we are able to generate a profit on mined
+                            Bitcoins and share some of that as a bonus to miners.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">How do I get access to the pool?</h6>
+                        <p class="mb-0 text-muted">
+                            You can submit a
+                            request at the bottom of this site, and we will review your application
+                            promptly. You need to be sure you are using ASIC miners and a hashrate
+                            of at least 50TH/s.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">What is being mined at Mining Operator?</h6>
+                        <p class="mb-0 text-muted">
+                            We are a Bitcoin
+                            Core (BTC) only mining pool and do not do any merge mining. We do not
+                            believe in switching as there is a high markup for currency conversions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">How do you determine the bonus paid out?</h6>
+                        <p class="mb-0 text-muted">
+                            The bonus
+                            percentage is applied on top of the shares submitted for each
+                            connection/miner. A worker can have 1000s of connections/miners, but
+                            each must be below 100TH and above 1TH.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">Where are your servers located?</h6>
+                        <p class="mb-0 text-muted">
+                            We have servers
+                            in the United States, Germany, Singapore and China. Our latency based
+                            system will send you to the nearest server without any need to manage on
+                            your end.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">When will payouts be made?</h6>
+                        <p class="mb-0 text-muted">
+                            Payouts are made
+                            daily once 0.01 BTC has been accumulated in the account. Processing will
+                            be done daily to the mining BTC address at 0000 - 1200 UTC.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="faq_contant p-4 mt-3 bg-light">
+                        <h6 class="font-weight-bold text-uppercase">Why is the minimum set at 0.01 BTC?</h6>
+                        <p class="mb-0 text-muted">
+                            This pool was
+                            created for medium to larger mining operations thus the minimum 0.01 BTC
+                            payout. Payments are processed the next day automatically.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ End  -->
+    <!-- START CTA -->
+    <section class="section_all bg-light" id="join">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <h1 class="font-weight-bold text-capitalize cta_header">Request Access to the Pool</h1>
+                        <h4 class="font-weight-bold text-capitalize cta_header">Bitcoin Mining Should be Simple and Profitable</h4>
+                        <p class="mx-auto all_section_heading_details text-muted  mt-4 pt-2">
+                            Every
+                            share contributed will count to your reward, and we do not take a cut.
+                            Give us a try, and we welcome you to compare us with other pools to see
+                            the difference.
+                        </p>
+                        <div class="mt-4 pt-3">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn_custom" data-toggle="modal" data-target="#exampleModalCenter">Request an Invite Now</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title mb-0 font-weight-bold" id="exampleModalLongTitle">Request Access to Mining-Operator Pool</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="join-form" action="RequestAccess" id="join-form" method="post" name="join-form">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="address" name="address" placeholder="Your Payout BTC Address" required="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="hashrate" name="hashrate" placeholder="Total Hashrate in TH/PH" required="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="location" name="location" placeholder="Country/Location(s) of miners" required="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea name="minertype" id="minertype" rows="5" class="form-control" placeholder="Model(S) + QTY...." required=""></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input id="validator" type="text" name="validator" value="">
+                                                </div>
+                                                <div>
+                                                    <button class="btn btn_custom w-50" type="submit" name="join" id="join" value="join">Request Invite</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CTA -->
+    <!-- Join Start -->
+    <section class="section_all" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_heading text-center">
+                        <h3 class="all_section_heading">Get In Touch</h3>
+                        <p class="text-muted pt-2 all_section_heading_details text-center mx-auto">
+                            As
+                            a new way of doing pooled Bitcoin mining, you may have questions so
+                            feel free to ask. We will get back to you as soon as we can.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row vertical_content_manage mt-5">
+                <div class="col-lg-6">
+                    <div class="business_form_custom bg-white mt-3">
+                        <form class="contact-form" action="RequestMessage" id="contact-form" method="post" name="contact-form">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2">
+                                        <input name="name" id="name" type="text" class="form-control" placeholder="Your name..." required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2">
+                                        <input name="email" id="email" type="email" class="form-control" placeholder="Your email..." required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2">
+                                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Your Subject.." required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2">
+                                        <textarea name="comments" id="comments" rows="5" class="form-control" placeholder="Your message..." required=""></textarea>
+                                    </div>
+                                </div>
+                                <style>
+                                    #validator {
+                                        display: none;
+                                    }
+                                </style>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input id="validator" type="text" name="validator" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input type="submit" class="btn btn_custom" name="contact" value="Send Message">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="text-center mt-3">
+                        <div class="contact_icon">
+                            <i class="mbri-letter text_custom"></i>
+                        </div>
+                        <div class="mt-2">
+                            <p class="mb-0 font-weight-bold">For Support Enquiries</p>
+                            <p class="text-muted">contact@mining-operator.org.uk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Join End -->
+    <!-- Start Footer -->
+    <footer class="footer_detail">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mt-3 text-white text-uppercase">Links</h6>
+                    <ul class="list-unstyled footer_menu_list mt-3">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#compare">Compare</a></li>
+                        <li><a href="#faq">Faqs</a></li>
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mt-3 text-white text-uppercase">Support</h6>
+                    <ul class="list-unstyled footer_menu_list mt-3">
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="mailto:contact@mining-operator.org.uk">Email</a></li>
+                    </ul>
+                </div>
+                @*<div class="col-lg-3">
+                        <h6 class="mt-3 text-white text-uppercase">Server Locations</h6>
+                        <ul class="list-unstyled footer_menu_list mt-3">
+                            <li><a href="">Singapore</a></li>
+                            <li><a href="">United States</a></li>
+                            <li><a href="">Germany</a></li>
+                            <li><a href="">China</a></li>
+                        </ul>
+                    </div>*@
+            </div>
+            <div class="fot_bor"></div>
+            <div class="row pt-3 pb-3">
+                <div class="col-lg-12">
+                    <div class=" text-center">
+                        <p class="text-white mb-0">2019 © Mining-Operator.org.uk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Back To Top Up Arrow Start -->
+    <a href="#" class="back_top_angle_up" style="display: inline;">
+        <i class="mbri-arrow-up"> </i>
+    </a>
+    <!-- Back To Top Up Arrow End -->
+    <!-- JAVASCRIPTS -->
+    <script src="~/Content/v3/style/js/jquery.js"></script>
+    <script src="~/Content/v3/style/js/popper.js"></script>
+    <script src="~/Content/v3/style/js/bootstrap.js"></script>
+    <!--TESTISLIDER JS-->
+    <script src="~/Content/v3/style/js/owl.js"></script>
+    <script src="~/Content/v3/style/js/jquery_002.js"></script>
+    <script src="~/Content/v3/style/js/scrollspy.js"></script>
+    <script src="~/Content/v3/style/js/jquery_003.js"></script>
+    <script src="~/Content/v3/style/js/particles.js"></script>
+    <script src="~/Content/v3/style/js/particles_002.js"></script>
+    <script src="~/Content/v3/style/js/parallax.js"></script>
+    <script src="~/Content/v3/style/js/custom.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#exampleModalCenter').modal('show');
+        });
+    </script>
+
+
+</body>
+</html>

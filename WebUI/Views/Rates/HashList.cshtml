@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "HashList";
+    Layout = "~/Views/Shared/_main.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-primary">
+
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-tachometer"></i> Overall Hashrate</h3>
+            </div>
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/series-label.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <div class ="hidden-xs" id="container" style="min-width: 310px; height: 400px; margin: 0 auto">@Html.Raw(ViewBag.script)</div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs" style="width: 40px;"></th>
+                            <th title="Hash Rate TH/s.">Hash Rate</th>
+                            <th title="Timestamp date and time">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < ViewBag.count; i++)
+                        {
+                            <tr>
+                                <td class="hidden-xs"></td>
+                                <td><i class="fa fa-tachometer"></i> @ViewBag.sum[i]</td>
+                                <td><i class="fa fa-clock-o"></i> @ViewBag.date[i]</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

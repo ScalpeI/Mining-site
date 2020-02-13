@@ -1,0 +1,61 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Content/bootstrap.min2.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <div id="main_container">
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+        <div id="header">
+            <div class="logo"><a href="~/"><img src="~/Content/images/logo.png" height="90" border="0" alt="Mining Operator" title="" /></a></div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="@(ViewContext.RouteData.Values["Action"].ToString().Equals("List") ? "selected" : "")">@Html.ActionLink("Home", "List", "Rates")</li>
+                @if (User.Identity.Name == "Admin")
+                {
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString().Equals("Index") ? "selected" : "")">@Html.ActionLink("AdminPanel", "Index", "Admin")</li>
+                }
+                @if (!Request.IsAuthenticated)
+                {
+                    <li style="float:right" class="@(ViewContext.RouteData.Values["Action"].ToString().Equals("Login") ? "selected" : "")">@Html.ActionLink("Login", "Login", "Account")</li>
+                }
+                else
+                {
+                    <li style="float:right" class="@(ViewContext.RouteData.Values["Action"].ToString().Equals("Logoff") ? "selected" : "")"><a href='@Url.Action("Logoff","Account")'>Logout</a></li>
+                    <li style="float:right" class="@(ViewContext.RouteData.Values["Action"].ToString().Equals("Main")||ViewContext.RouteData.Values["Action"].ToString().Equals("Balance") ? "selected" : "")">@Html.ActionLink(User.Identity.Name, "Main", "Profile")</li>
+
+                }
+
+            </ul>
+        </div>
+
+        @RenderBody()
+
+        <div id="footer">
+            <div class="left_footer">@Html.ActionLink("home", "List", "Rates")</div>
+            <div class="right_footer">
+             </div>
+
+        </div>
+
+
+        <!-- end of main_container -->
+    </div>
+</body>
+</html>

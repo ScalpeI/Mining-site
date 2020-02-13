@@ -1,0 +1,37 @@
+﻿<section class="sidebar">
+    <ul class="sidebar-menu">
+        <li class="active">
+            <a href="/">
+                <i class="ion ion-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        @if (User.Identity.Name == "Admin")
+        {
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cog"></i> <span>Admin Panel</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href='@Url.Action("Index","Admin")' style="margin-left: 10px;"><i class="fa fa-users"></i> Edit Users</a></li>
+                    <li><a href='@Url.Action("Edit","Consts",new { id = 1 })' style="margin-left: 10px;"><i class="fa fa-cogs"></i> Edit Constants</a></li>
+                </ul>
+            </li>
+        }
+        @if (Request.IsAuthenticated)
+        {
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-id-card-o"></i> <span>@User.Identity.Name Profile</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href='@Url.Action("Main","Profile")' style="margin-left: 10px;"><i class="fa fa-user"></i> @User.Identity.Name Info</a></li>
+                    <li><a href='@Url.Action("Balance","Profile")' style="margin-left: 10px;"><i class="fa fa-usd"></i> @User.Identity.Name Balance</a></li>
+                    <li><a href='@Url.Action("Logoff","Account")' style="margin-left: 10px;"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+                </ul>
+            </li>
+        }
+    </ul>
+</section>

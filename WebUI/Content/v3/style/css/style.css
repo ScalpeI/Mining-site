@@ -1,0 +1,774 @@
+/*  Theme Name: Zoomka - Responsive Bootstrap 4 Landing Template
+    Author: VBThemes
+    Version: 1.0.0
+    Created:August 2018
+    File Description:Main Css file of the template
+*/
+
+/***************
+
+1.BASIC
+2.HELPER
+3.NAVBAR
+4.HOME
+5.FEATURES
+6.SERVICES
+7.CTA 
+8.TESTIMONIAL
+9.OUR TEAM
+10.PRICING PLAN
+11.FAQ
+12.CONTACT US
+13.FOOTER
+14.FOOTER
+
+
+*****************/
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
+
+/*=================
+    01.BASIC
+===================*/
+
+body {
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1.font-weight-bold,
+h2.font-weight-bold,
+h3.font-weight-bold,
+h4.font-weight-bold,
+h5.font-weight-bold,
+h6.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+a,
+a:hover,
+a:focus,
+button {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.back_top_angle_up {
+    text-align: center;
+    position: fixed;
+    bottom: 15px;
+    height: 35px;
+    width: 35px;
+    background-color: #c82a38;
+    display: none;
+    z-index: 10000;
+    border-radius: 3px;
+    right: 35px;
+    transition: all 0.5s;
+}
+
+.back_top_angle_up i {
+    color: #fff;
+    line-height: 35px;
+    font-size: 14px;
+    display: block;
+}
+
+
+/*==================
+    02.HELPER
+====================*/
+
+.bg_overlay_cover_on {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg_overlay_gradient {
+    background: #101010;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3c405a, #101010);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #555e9a, #101010);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.text_custom {
+    color: #c82a38;
+}
+
+.bg_cover_custom {
+    background-color: #c82a38;
+}
+
+.btn {
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.5s;
+    letter-spacing: 0.6px;
+    color: #fff;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    outline: none !important;
+}
+
+.btn_custom {
+    border: 1px solid #c82a38;
+    background-color: #c82a38;
+}
+
+.btn_custom:hover,
+.btn_custom:focus,
+.btn_custom:active,
+.btn_custom.active,
+.btn_custom.focus,
+.btn_custom:active,
+.btn_custom:focus,
+.btn_custom:hover,
+.open > .dropdown-toggle.btn_custom {
+    color: #f3f3f3;
+    background-color: #fb2c40;
+    border-color: #fb2c40;
+}
+
+.btn_outline_custom {
+    border: 2px solid #f5f5f5;
+}
+
+.btn_outline_custom:hover,
+.btn_outline_custom:focus,
+.btn_outline_custom:active,
+.btn_outline_custom.active,
+.btn_outline_custom.focus,
+.btn_outline_custom:active,
+.btn_outline_custom:focus,
+.btn_outline_custom:hover,
+.open > .dropdown-toggle.btn_outline_custom {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.full_height_100vh {
+    height: 100vh;
+}
+
+.vertical_content_manage {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+}
+
+.section_all {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.all_section_heading {
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 28px;
+}
+
+.all_section_heading_details {
+    max-width: 600px;
+}
+
+.section_heading i {
+    font-size: 22px;
+}
+
+.btn_small {
+    padding: 8px 12px;
+}
+
+.navbar-brand img {
+    height: 34px;
+}
+
+/*======================
+    03  NAVBAR
+=======================*/
+
+.custom_nav_menu {
+    padding: 15px 0px;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 999;
+    margin-bottom: 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+.custom_nav_menu .social_menu .list-inline-item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.custom_nav_menu .navbar-nav li a {
+    color: #fff;
+    font-size: 15px;
+    background-color: transparent !important;
+    padding: 15px 0;
+    margin: 0 7px;
+    transition: all 0.4s;
+}
+
+.navbar-toggler {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #ffffff;
+}
+
+.stickyadd .navbar-nav {
+    margin-top: 0px;
+}
+
+.stickyadd.custom_nav_menu .navbar-nav li a {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.custom_nav_menu .navbar-brand.logo img {
+    height: 34px;
+}
+
+.stickyadd.custom_nav_menu {
+    margin-top: 0px;
+    padding: 8px 0px;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
+}
+
+.custom_nav_menu .navbar-nav li.active a,
+.custom_nav_menu .navbar-nav li a:hover,
+.custom_nav_menu .navbar-nav li a:active {
+    color: #c82a38 !important;
+}
+
+.navbar-toggle {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #ffffff;
+}
+
+.custom_nav_menu .btn-custom {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: transparent;
+    border-color: #337ab7;
+}
+
+.logo .logo-light {
+    display: inline-block;
+}
+
+.stickyadd .logo .logo-dark {
+    display: inline-block;
+}
+
+.stickyadd .logo .logo-light {
+    display: none;
+}
+
+.logo .logo-dark {
+    display: none;
+}
+
+/*================
+    04.HOME
+==================*/
+
+.bg_home_lan_img {
+    background-image: url(../images/home-bg-3.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home_small_budget {
+    background: #c82a38;
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+.home_big_budget {
+    padding: 8px 12px 8px 5px;
+    background-color: rgba(39, 40, 45, 0.55);
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+.home_title {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 700px;
+}
+
+.home_subtitle {
+    color: #dadada;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.home_table_cell_center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.home_table_cell {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.full_height_100vh_home {
+    height: 100vh;
+}
+
+
+/*-------------------
+    HOME - 3
+--------------------*/
+
+.up-index {
+    z-index: 2;
+}
+
+
+/*------------------
+    HOME DEMO -5
+------------------*/
+
+.bg_clip_home {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 25% 100%, 0 88%);
+}
+
+/*------------------
+    HOME DEMO -9
+------------------*/
+
+.bg_gradient_lan {
+    background: #101010;
+    background: linear-gradient(to right, #3c405a, #101010);
+}
+
+/*====================
+  05.  FEATURES
+====================*/
+
+.features_box_title_top {
+    max-width: 400px;
+    line-height: 1.4;
+}
+
+.features_box_subtitle {
+    line-height: 1.8;
+}
+
+.features_border_top {
+    height: 4px;
+    background: #c82a38;
+    width: 60px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.features_video .features_video_icon {
+    height: 46px;
+    width: 46px;
+    background-color: #c82a38;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    color: #fff;
+    font-size: 23px;
+}
+
+.features_video span {
+    font-size: 14px;
+    position: relative;
+    top: -3px;
+    color: #000 !important;
+}
+
+/*====================
+   06. SERVICES
+=====================*/
+
+.services_read_more i {
+    font-size: 26px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #e7e7e7;
+    display: inline-block;
+}
+
+
+/*==========================
+    07. CTA 
+===========================*/
+
+.bg_video_img_cover {
+    background-image: url(../images/bg_cta_section.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.all_section_heading_details {
+    color: #dadada;
+    line-height: 1.8;
+}
+
+.cta_max_width {
+    max-width: 635px;
+}
+
+
+/*=====================
+   08. TESTIMONIAL
+======================*/
+
+.client_box_img img {
+    max-width: 80px;
+}
+
+.clients_name h5 {
+    font-size: 16px;
+}
+
+.business_client_box p {
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 12px;
+    height: 7px;
+    margin: 20px 5px;
+    border: 1px solid #c82a38;
+    background-color: #c82a38;
+    opacity: 0.4;
+}
+
+/*====================
+  09. OUR TEAM
+=====================*/
+
+.team_box_all {
+    border: 1px solid #e0e0e0;
+}
+
+.team_box_all .team_img img {
+    max-width: 90px;
+}
+
+.team_social ul li a {
+    color: #fff;
+    border: 1px solid #fff;
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    line-height: 33px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.bg_fb_color {
+    background-color: #3b5998;
+}
+
+.bg_google_color {
+    background-color: #D34338;
+}
+
+.bg_twitter_color {
+    background-color: #1da1f2;
+}
+
+.bg_pinterest_color {
+    background-color: #BD081B;
+}
+
+/*====================
+  10. PRICING PLAN
+=====================*/
+
+.pricing_plan_box {
+    padding: 40px;
+    border-radius: 10px
+}
+
+.list_price_features {
+    padding: 20px 40px;
+}
+
+.pricing_devider {
+    height: 3px;
+    width: 70px;
+    display: block;
+    background: #6c757d;
+}
+
+.price_tag_heading span {
+    font-size: 14px;
+}
+
+.icon_success_color {
+    color: #c82a38;
+    margin-right: 12px;
+}
+
+.pricing_plan_box.active {
+    background: #c82a38;
+}
+
+.pricing_plan_box.active {
+    position: relative;
+    overflow: hidden;
+    border-color: #ff546c;
+}
+
+.pricing_plan_box.active i {
+    color: #fff;
+    margin-right: 12px;
+}
+
+.pricing_plan_box.active .lable h6 {
+    color: #c82a38;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.pricing_plan_box.active .lable {
+    background: #fff;
+    padding: 8px 0;
+    text-align: center;
+    width: 200px;
+    position: absolute;
+    top: 22px;
+    right: -60px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*===============
+    11.FAQ
+=================*/
+
+.faq_contant {
+    border-radius: 6px;
+}
+
+/*=====================
+    12. CONTACT US
+======================*/
+
+.business_form_custom .form-control {
+    height: 50px;
+    font-size: 16px;
+    border-color: #eae7e7;
+}
+
+textarea.form-control {
+    height: auto !important;
+}
+
+.business_form_custom .form-control:focus {
+    border-color: #c82a38 !important;
+    box-shadow: none;
+    outline: 0;
+}
+
+.business_form_custom {
+    box-shadow: 0 0 35px 1px #efefef;
+    padding: 40px;
+}
+
+.contact_icon {
+    font-size: 30px;
+    background: rgba(51, 208, 133, 0.1);
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+    line-height: 64px;
+    border-radius: 50px;
+}
+
+
+/*==================
+     13.FOOTER
+====================*/
+
+.footer_detail {
+    background-color: #242424;
+}
+
+.subcribe-newslatter input {
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 17px;
+    color: #fff !important;
+    border: none;
+    outline: none !important;
+    padding-right: 150px;
+    padding-left: 30px;
+    border-radius: 30px;
+    background-color: rgba(241, 241, 241, 0.05);
+}
+
+.subcribe-newslatter button {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    outline: none !important;
+    border-radius: 30px;
+    font-size: 17px;
+    padding: 9px 30px;
+}
+
+.subcribe-newslatter form {
+    max-width: 550px;
+}
+
+.footer_about p {
+    max-width: 680px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer_detail ul.footer_menu_list li a:hover {
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.footer_detail ul.footer_menu_list li a {
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding: 4px 0;
+    text-decoration: none !important;
+}
+
+.footer_detail .footer_logo {
+    height: 34px;
+}
+
+.footer_detail .copy-rights {
+    line-height: 43px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer_detail .fot_bor {
+    height: 2px;
+    background: #2f2f2f;
+    width: 100%;
+}
+
+
+/*=====================
+    14. RESPONSIVE
+=======================*/
+
+@media (max-width: 768px) {
+    .custom_nav_menu {
+        margin-top: 0px;
+        padding: 10px 0px !important;
+        background-color: #fff !important;
+    }
+    .vertical_content_manage {
+        display: inherit;
+    }
+    .home_title {
+        font-size: 32px;
+    }
+    .custom_nav_menu .navbar-nav li a {
+        margin: 0 0px;
+        padding: 6px 0;
+        color: rgba(0, 0, 0, 0.55) !important;
+    }
+    .custom_nav_menu .navbar-nav li.active a {
+        color: #c82a38 !important;
+    }
+    .custom_nav_menu>.container {
+        width: 90%;
+    }
+    .custom_nav_menu .logo .logo-dark {
+        display: inline-block;
+    }
+    .custom_nav_menu .logo .logo-light {
+        display: none;
+    }
+    .custom_nav_menu .navbar-brand.logo img {
+        height: 26px;
+    }
+    .navbar-nav {
+        margin-top: 0px;
+    }
+    .navbar-toggler {
+        font-size: 28px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #000;
+    }
+    .h-100vh,
+    .full_height_100vh_home {
+        height: auto;
+    }
+
+    .full_height_100vh_home{
+        padding: 125px 0px;
+    }
+    .pricing_plan_box {
+        padding: 18px;
+    }
+    .cta_header{
+        font-size: 22px;
+        line-height: 1.4;
+    }
+}

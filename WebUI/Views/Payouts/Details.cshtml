@@ -1,0 +1,57 @@
+﻿@model Domain.Entities.Payout
+
+@{
+    ViewBag.Title = Model.owner + " Details Payout - Mining operator";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_main.cshtml";
+    ViewBag.Login = Model.owner + " Details Payout";
+    if (User.Identity.Name!="Admin")
+    {
+        Response.Redirect("~/Rates/Index");
+    }
+}
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.owner)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.owner)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.count)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="panel-footer">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id, Login = Model.owner }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Back to List", "Index", new { Login = Model.owner }, new { @class = "btn btn-default" })
+    </div>
+</div>

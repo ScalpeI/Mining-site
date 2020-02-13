@@ -1,0 +1,38 @@
+﻿@model Domain.Entities.User
+
+@{
+    ViewBag.Title = "Админ панель: редактирование пользователя";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_main.cshtml";
+    HtmlHelper.ClientValidationEnabled = false;
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+    if (User.Identity.Name!="Admin")
+    {
+        Response.Redirect("~/Rates/Index");
+    }
+}
+    <div class="panel">
+
+        @using (Html.BeginForm())
+        {
+    <div class="panel-body">
+        @Html.HiddenFor(u => u.UserId)
+        @Html.HiddenFor(u => u.PasswordHash)
+        @foreach (var property in ViewData.ModelMetadata.Properties)
+        {
+            if (property.PropertyName != "UserId")
+            {
+        <div class="form-group">
+            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                @Html.ValidationMessage(property.PropertyName)
+        </div>
+            }
+        }
+    </div>
+    <div class="panel-footer">
+        <input type="submit" value="Сохранить" class="btn btn-primary"/>
+        @Html.ActionLink("Отмена", "Index", null, new { @class = "btn btn-default" })
+    </div>
+     }   
+    </div>

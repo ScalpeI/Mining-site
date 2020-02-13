@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Domain.Entities.Payout>
+
+@{
+    ViewBag.Title = "Payout";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_main.cshtml";
+}
+
+    @*<div class="center_content">*@
+        <div class="center_left">
+            <ul class="nav nav-pills">
+                <li role="presentation">@Html.ActionLink("Profile", "Main", "Profile")</li>
+                <li role="presentation">@Html.ActionLink("Balance", "Balance", "Profile")</li>
+                <li class="active">@Html.ActionLink("Payout", "Payout", "Profile")</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-solid box-success">
+                    <div class="box-header">
+                        <h3 class="box-title"><i class="fa fa-credit-card"></i> Payouts</h3>
+                    </div>
+                    <div class="box-body no-padding">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="hidden-xs" style="width: 40px;"></th>
+                                    <th title="Amount Payout BTC">Amount</th>
+                                    <th title="Status Payout">Status</th>
+                                    <th title="Dates Payout">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="hidden-xs">@Html.DisplayFor(modelItem => item.status)</td>
+                                        <td><i class="fa fa-btc"></i> @Html.DisplayFor(modelItem => item.count)</td>
+                                        <td>
+                                            @if (item.status)
+                                            {
+                                                <string> Confirmed</string>
+                                            }
+                                            else
+                                            {
+                                                <string> Pending</string>
+                                            }
+                                        </td>
+                                        <td><i class="fa fa-clock-o"></i> @Html.DisplayFor(modelItem => item.date)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p>
+                    <input type="button" class="btn btn-default" id="excel" value="Export to Excel File" style="align-content:center" />
+                </p>
+            </div>
+        </div>
+        <script>
+            $(document).on('click', '#excel', function () {
+                window.location.href = '/Profile/ExportToExcel/';
+            });
+        </script>
+        @*<div class="tab-content">
+            <div class="tab-pane active">
+                <div class="col-sm-12">
+                    <div>
+                        <div>
+                        </div>
+                        <div>
+                            <form class="form-horizontal" method="post" style="margin-bottom:0" autocomplete="off" novalidate="novalidate">
+                                <div class="form-group">
+                                    
+                                    <table class="table">
+                                        <tr>
+                                            <th>
+                                                Count Payout BTC
+                                            </th>
+                                            <th>
+                                                Dates Payout
+                                            </th>
+                                            <th>
+                                                Status Payout
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.count)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.date)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.status)
+                                                    @if (item.status)
+                                                    {
+                                                        <string> Confirmed</string>
+                                                    }
+                                                    else
+                                                    {
+                                                        <string> Pending</string>
+                                                    }
+
+                                                </td>
+
+                                            </tr>
+                                        }
+
+                                    </table>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>*@

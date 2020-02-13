@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Domain.Entities.Minear>
+
+@{
+    ViewBag.Title = "Minear";
+    Layout = "~/Views/Shared/_main.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-success" >
+            <div class="box-header"style="background-color: #ffa005;background: #ffa005">
+                <h3 class="box-title">
+                    <i class="fa fa-bitcoin"></i> Mining Earnings</h3>
+            </div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs" style="width: 40px;"></th>
+                            <th title="Mining Earnings mining-operator.org.uk/">Mining Earnings</th>
+                            <th title="Mining Earnings BTC.com">Mining Earnings BTC.com</th>
+                            <th title="Timestamp date">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="hidden-xs"><i class="fa fa-tachometer"></i></td>
+                                <td><i class="fa fa-bitcoin"></i> @Html.DisplayFor(modelItem => item.mining_earnings)</td>
+                                <td><i class="fa fa-bitcoin"></i> @double.Parse(item.fpps_mining_earnings).ToString("F8")</td>
+                                <td><i class="fa fa-clock-o"></i> @item.date.ToShortDateString()</td>
+                           </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

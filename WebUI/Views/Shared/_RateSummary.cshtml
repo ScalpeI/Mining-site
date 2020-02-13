@@ -1,0 +1,41 @@
+﻿@model Domain.Entities.Rate
+
+<div class="welcome_box">
+    <div style="float: left;width:50%;display:inline-block;">
+        <p style="font-size:15px;" class="welcome">
+            <span style="font-size:20px" class="orange">BTC/USD</span><br /><br />
+            <span style="font-size:14px; color:lightseagreen" class="orange">Current Price:</span>
+            <span style="font-size:14px">$@Model.last.ToString("N")</span><br />
+            <span style="font-size:12px; color:lightseagreen" class="orange">High price: </span>
+            <span style="font-size:12px">$@Model.high.ToString("N")</span><br />
+            <span style="font-size:12px; color:lightseagreen" class="orange">Low price: </span>
+            <span style="font-size:12px">$@Model.low.ToString("N")</span><br />
+            <span style="font-size:12px; color:lightseagreen" class="orange">Open price: </span>
+            <span style="font-size:12px">$@Model.open.ToString("N")</span><br />
+        </p>
+    </div>
+    <div style="float: left;width:50%;display:inline-block;">
+        <p style="padding-left:0px;font-size:15px;" class="welcome">
+            <span style="font-size:20px" class="orange"></span><br /><br />
+            <span style="font-size:14px; color:lightseagreen" class="orange">Total system hashrate:</span>
+            <span style="font-size:14px">@ViewBag.hashrr TH/s</span><br />
+            <span style="font-size:12px; color:lightseagreen" class="orange">Mining Earnings 1TH*24H:</span>
+            <span style="font-size:12px">@ViewBag.Minear BTC</span><br />
+            <span style="font-size:12px; color:lightseagreen" class="orange"></span>
+            <span style="font-size:12px"></span><br />
+            <span style="font-size:12px; color:lightseagreen" class="orange"></span>
+            <span style="font-size:12px"></span><br />
+        </p>
+    </div>
+</div>
+<div class="features">
+    <div class="title">Main features</div>
+
+    <ul class="list" style="border-bottom: 1px #CCCCCC dashed;">
+        <li><span></span><a>We provide financial services in mining industry</a></li>
+        <li><span></span><a>We can buy your hashpower making direct payment to your bank account</a></li>
+        <li><span></span><a>Payouts on 10:00 AM everyday. No limits</a></li>
+        <li><span></span><a>1,5% fee</a></li>
+
+    </ul>
+</div>

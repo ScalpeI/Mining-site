@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Domain.Entities.Payout>
+
+@{
+    ViewBag.Title = "Payout";
+}
+
+<html>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                Amount BTC
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Date
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.count)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

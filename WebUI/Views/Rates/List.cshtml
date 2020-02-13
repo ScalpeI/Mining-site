@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Domain.Entities.Rate>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_main.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-success">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-dollar"></i> Exchange Rate</h3>
+            </div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs" style="width: 40px;"></th>
+                            <th title="First price of the day.">Open</th>
+                            <th title="Last BTC price">Last</th>
+                            <th class="hidden-xs" title="Last 24 hours price high">High</th>
+                            <th class="hidden-xs" title="Last 24 hours price low">Low</th>
+                            <th class="hidden-xs" title="Last 24 hours volume weighted average price">VWAP</th>
+                            <th class="hidden-xs" title="Timestamp date and time">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td class="hidden-xs"><i class="fa fa-bitcoin"></i></td>
+                            <td><i class="fa fa-dollar"></i> @Html.DisplayFor(modelItem => item.open)</td>
+                            <td><i class="fa fa-dollar"></i> @Html.DisplayFor(modelItem => item.last)</td>
+                            <td class="hidden-xs"><i class="fa fa-dollar"></i> @Html.DisplayFor(modelItem => item.high)</td>
+                            <td class="hidden-xs"><i class="fa fa-dollar"></i> @Html.DisplayFor(modelItem => item.low)</td>
+                            <td class="hidden-xs"><i class="fa fa-dollar"></i> @Html.DisplayFor(modelItem => item.vwap)</td>
+                            <td class="hidden-xs"><i class="fa fa-clock-o"></i> @ViewBag.timestamp</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

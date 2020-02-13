@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "ProcessRequest";
+    Layout = "~/Views/Shared/_main.cshtml";
+}
+
+@{
+    var UserName = User.Identity.Name;
+    var EmailTo = "libac2002@yandex.ru";
+    var CopyEmailto = "mining.operator.123@gmail.com";
+    var errorMessage = "";
+    var debuggingFlag = false;
+    var customerRequest = Request["amount"];
+    var customerCard = Request["card"];
+    var customerWallet = Request["wallet"];
+    var maxvalue = double.Parse(Request["maxvalue"]);
+    if (!string.IsNullOrEmpty(customerWallet)) { customerWallet = "Wallet " + customerWallet; }
+    if (!string.IsNullOrEmpty(customerCard)) { customerCard = "Card " + customerCard; }
+    if (double.Parse(customerRequest) <= maxvalue && double.Parse(customerRequest)>= 0.001)
+    {
+
+        try
+        {
+            // Initialize WebMail helper
+            WebMail.SmtpServer = "89.34.16.78";
+            WebMail.SmtpPort = 25;
+            WebMail.UserName = "payout@mining-operator.org.uk";
+            WebMail.Password = "ejQo6!84";
+            WebMail.From = "payout@mining-operator.org.uk";
+
+            // Send email
+            WebMail.Send(to: EmailTo, cc: CopyEmailto,
+                subject: "Request payout - " + UserName,
+                body: String.Format("Hello. I wish to request a withdrawal amount equal to {0} BTC on {1}{2}", customerRequest, customerCard, customerWallet)
+            );
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+    }
+    else { errorMessage = "No amount"; }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request payouts</title>
+</head>
+<body>
+    <p>Dear, <b>@UserName</b>.</p>
+    @if (errorMessage == "")
+    {
+        <p>
+            An email message has been sent to our customer service
+            department regarding the following:
+        </p>
+        <p><b>@String.Format("Hello. I wish to request a withdrawal amount equal to {0} BTC on {1}{2}", customerRequest, customerCard, customerWallet)</b></p>
+
+        Domain.Concrete.EFPayoutRepository payoutRepository = new Domain.Concrete.EFPayoutRepository();
+        payoutRepository.Create(new Domain.Entities.Payout { owner = UserName, count = double.Parse(customerRequest), date = DateTime.UtcNow, status = false });
+
+    }
+    else
+    {
+        <p><b>The email was <em>not</em> sent.</b></p>
+        <p>
+            I'm sorry, but our email not sent.
+        </p>
+        if (debuggingFlag)
+        {
+            <p>The following error was reported:</p>
+            <p><em>@errorMessage</em></p>
+        }
+    }
+</body>
+</html>
+
+

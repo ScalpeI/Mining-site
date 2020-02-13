@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "Mining Operator";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_main.cshtml";
+    if (!Request.IsAuthenticated)
+    {
+        Response.Redirect("~/Default/Index");
+    }
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-primary">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-users"></i> Pool Information</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="panel bg-aqua">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tachometer fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>@ViewBag.hashrr TH/s</h3>
+                        <div>Pool Hashrate</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("HashList")">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="panel bg-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-usd fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>$@Model.ToString("N")</h3>
+                        <div>BTC/USD</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("List")">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="panel bg-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-btc fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>@ViewBag.Minear BTC</h3>
+                        <div>BTC per TH/s</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("Minear")">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+@if (Request.IsAuthenticated)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-solid box-success">
+                <div class="box-header">
+                    <h3 class="box-title"><i class="fa fa-user"></i> Personal Information</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="panel bg-aqua">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tachometer fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <h3>@ViewBag.hash TH/s</h3>
+                            <div>@User.Identity.Name Hashrate</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Balance","Profile")">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="panel bg-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-usd fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <h3>$@ViewBag.balanced</h3>
+                            <div>@User.Identity.Name Balance</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Balance","Profile")">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="panel bg-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-btc fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <h3>@ViewBag.balance BTC</h3>
+                            <div>@User.Identity.Name Balance BTC</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="@Url.Action("Balance","Profile")">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid box-danger">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-flask"></i> Main features</h3>
+            </div>
+            <div class="box-body no-padding">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td><i class="fa fa-university fa-1x"></i></td>
+                            <td>We provide financial services in mining industry</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-credit-card fa-1x"></i></td>
+                            <td>We can buy your hashpower making direct payment to your bank account</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-money fa-1x"></i></td>
+                            <td>Payouts on request at 12:00 AM and 12:00 PM everyday. Minimum payout amount 0.001 BTC</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-pie-chart fa-1x"></i></td>
+                            <td>No fees</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

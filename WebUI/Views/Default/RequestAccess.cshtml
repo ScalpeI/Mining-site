@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ProcessRequest";
+    Layout = "~/Views/Shared/_main.cshtml";
+}
+
+@{
+    var EmailTo = "libac2002@yandex.ru";
+    var CopyEmailto = "mining.operator.123@gmail.com";
+    var errorMessage = "";
+    var customerEmail = Request["email"];
+    var customerAddress = Request["address"];
+    var customerHashrate = Request["hashrate"];
+    var customerLocation = Request["location"];
+    var customerMinertype = Request["minertype"];
+    var valid = Request["validator"];
+
+    try
+    {
+        // Initialize WebMail helper
+        WebMail.SmtpServer = "89.34.16.78";
+        WebMail.SmtpPort = 25;
+        WebMail.UserName = "contact@mining-operator.org.uk";
+        WebMail.Password = "wmn5M6?4";
+        WebMail.From = "contact@mining-operator.org.uk";
+
+        // Send email
+        WebMail.Send(to: EmailTo, cc: CopyEmailto,
+            subject: "Request access - " + customerEmail,
+            body: String.Format("{0}\n{1}\n{2}\n{3}\n{4}", customerEmail, customerAddress, customerHashrate, customerLocation, customerMinertype)
+        );
+    }
+    catch (Exception ex)
+    {
+        errorMessage = ex.Message;
+    }
+}
+
+
+@if (errorMessage == "" && valid == "")
+{
+    <p>Message successfully delivered</p>
+}
+else if (errorMessage != "")
+{
+    <p>errorMessage</p>
+}
+else if (valid != "")
+{
+    <p>AntiBot</p>
+}
+
+
+
