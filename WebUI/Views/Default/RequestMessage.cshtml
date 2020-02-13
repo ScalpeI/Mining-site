@@ -5,8 +5,8 @@
 }
 
 @{
-    var EmailTo = "libac2002@yandex.ru";
-    var CopyEmailto = "mining.operator.123@gmail.com";
+    var EmailTo = "EmailTo";
+    var CopyEmailto = "CopyEmailto";
     var errorMessage = "";
     var customerEmail = Request["email"];
     var customerName = Request["name"];
@@ -16,11 +16,11 @@
     try
     {
         // Initialize WebMail helper
-        WebMail.SmtpServer = "89.34.16.78";
-        WebMail.SmtpPort = 25;
-        WebMail.UserName = "contact@mining-operator.org.uk";
-        WebMail.Password = "wmn5M6?4";
-        WebMail.From = "contact@mining-operator.org.uk";
+        WebMail.SmtpServer = "SmtpServer";
+        WebMail.SmtpPort = SmtpPort;
+        WebMail.UserName = "UserName";
+        WebMail.Password = "Password";
+        WebMail.From = "From";
 
         // Send email
         WebMail.Send(to: EmailTo, cc: CopyEmailto,
